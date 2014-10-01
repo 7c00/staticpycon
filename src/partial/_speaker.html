@@ -6,7 +6,7 @@
     </div>
     <div class="row-content">
       <h4 class="list-group-item-heading">{{ speaker.name }}
-        <small> - {{ speaker.city }}</small>
+        <small> - {{ speaker.city }} </small>
       </h4>
       <p class="list-group-item-text">{{ speaker.intro }}</p>
     </div>
@@ -14,11 +14,11 @@
   <div class="list-group-separator"></div>
 {% endmacro %}
 {# presentaion #}
-{% if proposals %}
+{% if speakers %}
   <div class="well" id="speakers">
     <h2 class="text-center">{{ message.speaker }}</h2>
     <div class="container">
-      {% for col in proposals | slice(3) %}
+      {% for col in speakers | slice(3) %}
         <div class="col-lg-4 list-group">
           {% for speaker in col %}
             {{ speaker_list_item(speaker) }}
