@@ -8,7 +8,7 @@
   {% set bronze_sponsors = sponsors | selectattr('level_bronze') %}
   {% macro simple_sponsors_list(some_sponsors, level_title) %}
     <p>
-      <span>{{ level_title }}</span>
+      <h4 style="display:inline;padding:1em">{{ level_title }}</h4>
       {% for sponsor in some_sponsors %}
         <a href="{{ sponsor.link }}">
           <img src="{{ sponsor.logo }}" alt="" class="sponsor-{{ sponsor.level }}"/>
@@ -18,7 +18,8 @@
   {% endmacro %}
   {# presentation #}
   <div class="clearfix"></div>
-  <div class="container text-center">
+  <div class="container text-center" id="sponsors">
+  <h2>{{ message.sponsor }}</h2>
   {{ simple_sponsors_list(diamond_sponsors, message.diamond_sponsor) }}
   {{ simple_sponsors_list(platinum_sponsors, message.platinum_sponsor) }}
   {{ simple_sponsors_list(gold_sponsors, message.gold_sponsor) }}

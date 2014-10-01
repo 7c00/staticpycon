@@ -1,23 +1,6 @@
-/* content */
-.header-section {
-  padding-top: 30px;
-  padding-bottom: 30px;
+
+#sponsors, #speakers, #volunteers, #beijing, #shanghai, #zhuhai{
+  padding-top: 60px;
+  padding-bottom: 45px;
 }
-.sponsor-section {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-.speaker-section {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  background: #178acc;
-  color: #fff;
-}
-.speaker-section img {
-  width: 140px;
-  height: 140px;
-}
-.donator-section {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
+

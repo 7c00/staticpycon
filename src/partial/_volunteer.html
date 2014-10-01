@@ -1,0 +1,34 @@
+{# defination #}
+{% set organizer_volunteers = volunteers | selectattr("role_organizer") %}
+{% set technician_volunteers = volunteers | selectattr("role_technician") %}
+{% macro volunteer_link(name, link) %}
+  {% if link %}
+  <p>{{ name }}:<a href="{{ link }}">{{ link }}</a></p>
+  {% endif %}
+{% endmacro %}
+{% macro volunteer_list(some_volunteers) %}
+  {% for volunteer in some_volunteers %}
+    <div>
+     <img src="{{ volunteer.avatar }}">
+     <span><strong>{{ volunteer.name }}</strong></span>
+     <p>{{ volunteer.intro }}</p>
+     {{ volunteer_link("github", volunteer.github) }}
+     {{ volunteer_link("weibo", volunteer.weibo) }}
+     {{ volunteer_link("blog", volunteer.blog) }}
+    </div>
+  {% endfor %}
+{% endmacro %}
+{# presentation #}
+
+{% if volunteers %}
+<div class="well" id="volunteers">
+  <div class="container">
+    <h2>{{ message.volunteers }}</h2>
+    <h3>{{ message.organizer }}</h3>
+    {{ volunteer_list(organizer_volunteers) }}
+    <h3>{{ message.technician }}</h3>
+    {{ volunteer_list(technician_volunteers) }}
+  </div>
+</div>
+
+{% endif %}

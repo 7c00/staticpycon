@@ -1,24 +1,29 @@
-{% if proposals %}
-  {# defination #}
-  {% macro speaker_card(speaker) %}
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <img src="{{ speaker.avatar }}" alt="{{ speaker.name }}" class="img-circle"/>
-      <p><strong>{{ speaker.name }}</strong></p>
-      <p>{{ speaker.city }}</p>
-      <p>{{ speaker.intro }}</p>
+{# defination #}
+{% macro speaker_list_item(speaker) %}
+  <div class="list-group-item speaker-item">
+    <div class="row-picture">
+      <img class="circle" src="{{ speaker.avatar }}" alt="icon">
     </div>
-  {% endmacro %}
-  {# presentaion #}
-  <div class="speaker-section text-center">
-    <h2>{{ message.speaker }}</h2>
+    <div class="row-content">
+      <h4 class="list-group-item-heading">{{ speaker.name }}
+        <small> - {{ speaker.city }}</small>
+      </h4>
+      <p class="list-group-item-text">{{ speaker.intro }}</p>
+    </div>
+  </div>
+  <div class="list-group-separator"></div>
+{% endmacro %}
+{# presentaion #}
+{% if proposals %}
+  <div class="well" id="speakers">
+    <h2 class="text-center">{{ message.speaker }}</h2>
     <div class="container">
-      {% for row in proposals | batch(4) %}
-      <div class="row">
-        {{ speaker_card(row[0]) }}
-        {{ speaker_card(row[1]) }}
-        {{ speaker_card(row[2]) }}
-        {{ speaker_card(row[3]) }}
-      </div>
+      {% for col in proposals | slice(3) %}
+        <div class="col-lg-4 list-group">
+          {% for speaker in col %}
+            {{ speaker_list_item(speaker) }}
+          {% endfor %}
+        </div>
       {% endfor %}
     </div>
   </div>

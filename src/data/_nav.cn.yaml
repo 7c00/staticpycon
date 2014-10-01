@@ -1,24 +1,24 @@
 - title: 首页
-  url: "/index.html" 
-- title: 报名
-  url: "/proposals.html"
+  url: "/#"
+- title: 赞助
+  url: "/#sponsors"
+- title: 讲师
+  url: "/#speakers"
 - title: 日程
   children:
   - title: 北京
-    url: "/"
+    url: "/#beijing"
   - title: 上海
-    url: "/"
+    url: "/#shanghai"
   - title: 珠海
-    url: "/schedule-zhuhai.html"
-- title: 赞助
-  url: "/sponsors.html"
+    url: "/#zhuhai"
 - title: 志愿
-  url: "/volunteers.html"
+  url: "/#volunteers"
 - title: 往届
   children:
-  - title: '2011/上海'
-    url: "/history-2011.html"
-  - title: '2012/京沪'
-    url: "/history-2012.html"
-  - title: '2013/京沪珠'
-    url: "/history-2013.html"
+  - title: '2011'
+    url: "http://cn.pycon.org/2011"
+  - title: '2012'
+    url: "http://cn.pycon.org/2012"
+  - title: '2013'
+    url: "http://cn.pycon.org/2013"
