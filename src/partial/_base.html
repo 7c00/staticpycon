@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head lang="{{ site.lang }}">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page_description }}">
+  <meta name="author" content="{{ site.author }}">
+  <link rel="shortcut icon" href="{{ site.base_url }}/asset/img/favicon.ico">
+  <title>{{ page_title }}</title>
+  <link rel="stylesheet" href="{{ site.base_url }}/asset/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ site.base_url }}/asset/css/custom.css">
+</head>
+<body>
+  {% include "partial/_nav.html" %}
+  <div style="height:50px;"></div>
+  {% block content %}{% endblock %}
+  {% include "partial/_footer.html" %}
+</body>
+<script src="{{ site.base_url }}/asset/js/jquery.min.js"></script>
+<script src="{{ site.base_url }}/asset/js/bootstrap.min.js"></script>
+</html>

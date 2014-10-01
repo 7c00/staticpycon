@@ -1,13 +1,23 @@
-
-
-img.sponsor-gold, img.sponsor-silver, img.sponsor-bronze {
-    max-height: 60px;
-    max-width: 200px;
-    padding: 5px;
+/* content */
+.header-section {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
-
-.proposal-card {
-    height: 150px;
-    padding: 10px;
-    border: solid #CCC 1px;
+.sponsor-section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.speaker-section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: #178acc;
+  color: #fff;
+}
+.speaker-section img {
+  width: 140px;
+  height: 140px;
+}
+.donator-section {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }

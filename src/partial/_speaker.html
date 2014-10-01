@@ -1,0 +1,25 @@
+{% if proposals %}
+  {# defination #}
+  {% macro speaker_card(speaker) %}
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <img src="{{ speaker.avatar }}" alt="{{ speaker.name }}" class="img-circle"/>
+      <p><strong>{{ speaker.name }}</strong></p>
+      <p>{{ speaker.city }}</p>
+      <p>{{ speaker.intro }}</p>
+    </div>
+  {% endmacro %}
+  {# presentaion #}
+  <div class="speaker-section text-center">
+    <h2>{{ message.speaker }}</h2>
+    <div class="container">
+      {% for row in proposals | batch(4) %}
+      <div class="row">
+        {{ speaker_card(row[0]) }}
+        {{ speaker_card(row[1]) }}
+        {{ speaker_card(row[2]) }}
+        {{ speaker_card(row[3]) }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

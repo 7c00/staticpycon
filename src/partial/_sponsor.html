@@ -1,0 +1,28 @@
+<!-- sponsors -->
+{% if sponsors %}
+  {# defination #}
+  {% set diamond_sponsors = sponsors | selectattr('level_diamond') %}
+  {% set platinum_sponsors = sponsors | selectattr('level_platinum') %}
+  {% set gold_sponsors = sponsors | selectattr('level_gold') %}
+  {% set silver_sponsors = sponsors | selectattr('level_silver') %}
+  {% set bronze_sponsors = sponsors | selectattr('level_bronze') %}
+  {% macro simple_sponsors_list(some_sponsors, level_title) %}
+    <p>
+      <span>{{ level_title }}</span>
+      {% for sponsor in some_sponsors %}
+        <a href="{{ sponsor.link }}">
+          <img src="{{ sponsor.logo }}" alt="" class="sponsor-{{ sponsor.level }}"/>
+        </a>
+      {% endfor %}
+    </p>
+  {% endmacro %}
+  {# presentation #}
+  <div class="clearfix"></div>
+  <div class="container text-center">
+  {{ simple_sponsors_list(diamond_sponsors, message.diamond_sponsor) }}
+  {{ simple_sponsors_list(platinum_sponsors, message.platinum_sponsor) }}
+  {{ simple_sponsors_list(gold_sponsors, message.gold_sponsor) }}
+  {{ simple_sponsors_list(silver_sponsors, message.silver_sponsor) }}
+  {{ simple_sponsors_list(bronze_sponsors, message.bronze_sponsor) }}
+  </div>
+{% endif %}

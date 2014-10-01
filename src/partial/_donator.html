@@ -1,0 +1,20 @@
+{% if donators %}
+<div class="donator-section text-center">
+  <div class="clearfix"></div>
+  <h2>{{ message.donator }}</h2>
+  <p>{{ message.donator_order }}</p>
+  <div class="container">
+    <table class="table table-bordered">
+    <tbody>
+    {% for row in donators | batch(5, fill_with=' ') %}
+      <tr>
+      {% for donator in row %}
+        <td>{{ donator }}</td>
+      {% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
